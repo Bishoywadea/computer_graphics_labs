@@ -1,0 +1,13 @@
+{
+    "cmake.debugConfig": {
+        "cwd": "${workspaceFolder}/build",
+        "program": "${workspaceFolder}/build/gfx_lab",
+    },
+    "cmake.configureSettings": {
+        "cwd": "${workspaceFolder}/build",
+        "program": "${workspaceFolder}/build/gfx_lab",
+    },
+    "files.associations": {
+        "string": "cpp"
+    }
+}
