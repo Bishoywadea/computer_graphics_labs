@@ -3,6 +3,8 @@
 layout (location = 0) in vec3 position; // Not used but necessary for compatibility
 out vec3 frag_color; // Output to Fragment Shader
 
+uniform float time;
+
 void main() {
     vec3 positions[3] = vec3[3](
         vec3(-0.5, -0.5, 0.0),
@@ -16,6 +18,6 @@ void main() {
         vec3(0.0, 0.0, 1.0)  // Blue
     );
 
-    gl_Position = vec4(positions[gl_VertexID], 1.0);
+    gl_Position = vec4(positions[gl_VertexID] + vec3(sin(time),0.0,0.0), 1.0);
     frag_color = colors[gl_VertexID]; // Pass color to fragment shader
 }

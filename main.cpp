@@ -71,13 +71,17 @@ int main(int, char**){
     GLuint vertex_array;
     glGenVertexArrays(1, &vertex_array);
 
+    GLuint time_location = glGetUniformLocation(program, "time");
+    
+
     while(glfwWindowShouldClose(window) == GL_FALSE){
         float time = (float)glfwGetTime();
-        glClearColor(std::sin(time) * 0.5f + 0.5f, std::cos(time) * 0.5f + 0.5f, 0.0f, 1.0f);
+        // glClearColor(std::sin(time) * 0.5f + 0.5f, std::cos(time) * 0.5f + 0.5f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(program);
         glBindVertexArray(vertex_array);
+        glUniform1f(time_location, time);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
         glfwSwapBuffers(window);
